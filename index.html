@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>अक्षित माथुर - सिविल इंजीनियर एवं सर्वेयर</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f9f9f9; }
+        header { background-color: #004d99; color: white; padding: 20px; text-align: center; }
+        nav { background-color: #003366; padding: 10px; text-align: center; }
+        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
+        section { padding: 20px; }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .gallery img {
+            width: 100%;
+            max-width: 300px;
+            margin: 10px;
+            border-radius: 8px;
+        }
+        footer { background-color: #004d99; color: white; text-align: center; padding: 15px; }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .contact-form button {
+            background-color: #004d99;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .contact-form button:hover {
+            background-color: #003366;
+        }
+        .map {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .whatsapp-button {
+            display: inline-block;
+            margin-top: 10px;
+            background-color: #25D366;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>अक्षित माथुर</h1>
+        <h2>सिविल इंजीनियर एवं सर्वेयर - अलवर, राजस्थान</h2>
+    </header>
+
+    <nav>
+        <a href="#services">सेवाएं / Services</a>
+        <a href="#gallery">गेलरी / Gallery</a>
+        <a href="#contact">संपर्क / Contact</a>
+    </nav>
+
+    <section id="services">
+        <h2>हमारी सेवाएं / Our Services</h2>
+        <ul>
+            <li>जमीनों का डिजिटल सर्वे / Land Survey with Modern Machines</li>
+            <li>साइट नक्शा निर्माण / Site Map Designing</li>
+            <li>बिल्डिंग निर्माण / Building Construction</li>
+            <li>GPS & मशीन आधारित सर्वे / Machine-based Surveying (Total Station, RTK etc.)</li>
+        </ul>
+    </section>
+
+    <section id="gallery" class="gallery">
+        <h2>कार्य की झलकियाँ / Work Snapshots</h2>
+        <img src="photo1.jpg" alt="Survey Image 1">
+        <img src="photo2.jpg" alt="Survey Image 2">
+        <img src="photo3.jpg" alt="Survey Image 3">
+        <img src="photo4.jpg" alt="Survey Equipment">
+    </section>
+
+    <section id="contact">
+        <h2>संपर्क करें / Contact Me</h2>
+        <p><strong>नाम / Name:</strong> अक्षित माथुर</p>
+        <p><strong>मोबाइल / Phone:</strong> 9694800674</p>
+        <p><strong>ईमेल / Email:</strong> akshitmathur08@gmail.com</p>
+        <p><strong>पता / Address:</strong> बीच का मोहल्ला, कोठी दशहरा, अलवर, राजस्थान - 301001</p>
+
+        <a class="whatsapp-button" href="https://wa.me/919694800674" target="_blank">WhatsApp पर संपर्क करें</a>
+
+        <div class="contact-form">
+            <h3>फॉर्म के जरिए संपर्क करें:</h3>
+            <form action="https://formsubmit.co/akshitmathur08@gmail.com" method="POST" id="contactForm">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="text" name="name" placeholder="आपका नाम" required>
+                <input type="tel" name="phone" placeholder="आपका मोबाइल नंबर" required>
+                <textarea name="message" placeholder="आपका संदेश" rows="4" required></textarea>
+                <button type="submit">भेजें / Submit</button>
+            </form>
+        </div>
+
+        <div class="map">
+            <h3>लोकेशन देखें:</h3>
+            <iframe src="https://www.google.com/maps?q=बीच+का+मोहल्ला,+कोठी+दशहरा,+अलवर,+राजस्थान+301001&output=embed" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2025 अक्षित माथुर - सर्वे एवं सिविल इंजीनियरिंग सेवाएं
+    </footer>
+
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const form = this;
+
+            const name = form.querySelector('input[name="name"]').value;
+            const phone = form.querySelector('input[name="phone"]').value;
+            const message = form.querySelector('textarea[name="message"]').value;
+
+            const whatsappMessage = `नमस्ते, मेरा नाम ${name} है। मोबाइल: ${phone}। संदेश: ${message}`;
+            const encoded = encodeURIComponent(whatsappMessage);
+            const whatsappURL = `https://wa.me/919694800674?text=${encoded}`;
+
+            window.open(whatsappURL, '_blank');
+            form.submit(); // Email के लिए
+        });
+    </script>
+</body>
+</html>
